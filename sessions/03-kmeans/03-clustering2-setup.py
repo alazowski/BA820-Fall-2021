@@ -41,9 +41,9 @@ import scikitplot as skplt
 # COLAB setup ------------------------------------------
 # from google.colab import auth
 # auth.authenticate_user()
-# PROJECT = ''    # <------ change to your project
-# SQL = "SELECT * from `questrom.datasets.judges`"
-# judges = pd.read_gbq(SQL, PROJECT)
+PROJECT = 'ba-820-business-analytics'    # <------ change to your project
+SQL = "SELECT * from `questrom.datasets.judges`"
+judges = pd.read_gbq(SQL, PROJECT)
 
 
 # dataset urls:
