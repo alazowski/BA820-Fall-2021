@@ -43,6 +43,7 @@ eo.index = eo.State
 eo.drop(columns="State", inplace=True)
 
 election = eo.loc[:, "Income":"Dem.Rep"]
+election
 
 scaler = StandardScaler()
 election_scaled = scaler.fit_transform(election)
@@ -72,7 +73,7 @@ eo.loc[eo.cluster==4, :]
 ######### KMEANS
 
 SQL = "SELECT * from `questrom.datasets.judges`"
-PROJECT = "questrom"
+PROJECT = "ba-820-business-analytics"
 judges = pd.read_gbq(SQL, PROJECT)
 
 judges.shape
@@ -148,6 +149,8 @@ plt.show()
 ####### goodness of fit
 k3.inertia_
 k5.inertia_
+
+
 
 
 ## exercise
