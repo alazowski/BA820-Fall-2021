@@ -47,8 +47,9 @@ from matplotlib import cm
 # Optional. generate the silohouette plot for the solution (might take a few minutes)
 
 SQL = "SELECT * from `questrom.datasets.diamonds`"
-dia = pd.read_gbq(SQL, "questrom")
+dia = pd.read_gbq(SQL, "ba-820-business-analytics")
 dia.info()
+type(dia)
 
 # keep numeric variables
 dia_num = dia.select_dtypes("number")
@@ -81,7 +82,7 @@ k5.inertia_
 ################################ PCA
 
 SQL = "SELECT * from `questrom.datasets.judges`"
-judges = pd.read_gbq(SQL, "questrom")
+judges = pd.read_gbq(SQL, "ba-820-business-analytics")
 
 judges.info()
 
@@ -172,7 +173,7 @@ plt.show()
 pca.n_components_
 
 comps = pca.components_
-
+comps
 COLS = ["PC" + str(i) for i in range(1, len(comps)+1)]
 
 loadings = pd.DataFrame(comps.T, columns=COLS, index=judges.columns)
