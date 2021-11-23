@@ -43,26 +43,26 @@ from newspaper import Article
 ## https://newspaper.readthedocs.io/en/latest/
 
 # Boston based chatbot company, now called Mainstay
-# URL = "https://voicebot.ai/2021/02/16/conversational-ai-startup-admithub-raises-14m-for-higher-ed-chatbots/"
+URL = "https://voicebot.ai/2021/02/16/conversational-ai-startup-admithub-raises-14m-for-higher-ed-chatbots/"
 
 # # setup the article
-# article = Article(URL)
+article = Article(URL)
 
 # # get the page
-# article.download()
+article.download()
 
 # # parse it -- extracts all sorts of info
-# article.parse()
+article.parse()
 
 # what do we have -- b/c its for news sites, attempts to parse things like dates
 
 # the text -- what we are really after
 
 # tokenize
-# cv = CountVectorizer()
+cv = CountVectorizer()
 
 # sklearn expects iterables, like lists
-# atokens = cv.fit_transform([atext])
+atokens = cv.fit_transform([atext])
 
 # how many tokens --- note the new syntax of get feature names out
 
@@ -106,7 +106,7 @@ from newspaper import Article
 ## we can pass in a tuple of the ngrams, default is 1,1
 
 # a new dataset
-# corpus = ["tokens, tokens everywhere"]
+corpus = ["tokens, tokens everywhere"]
 
 # we could only have bigrams
 
