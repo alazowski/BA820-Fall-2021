@@ -166,6 +166,7 @@ df.head(2)
 
 # step 0, just the tokens but keep as a dataframe
 tdf = df[['tokens']]
+tdf
 
 # step 1: melt it via explode
 tdf_long = tdf.explode("tokens")
@@ -199,13 +200,14 @@ dtm.head(3)
 ##
 
 SQL = "SELECT * from `questrom.datasets.topics`"
-topics = pd.read_gbq(SQL, "questrom")
+topics = pd.read_gbq(SQL, "ba-820-business-analytics")
 
+topics
 topics.shape
 topics.sample(1)
 
 topics['text'] = topics.text.str.lower()
-
+topics
 
 # just highlighting what is possible, you don't need to do this
 # keep just the numbers and letters
@@ -259,7 +261,7 @@ from sklearn import metrics
 
 cv = CountVectorizer()
 cv.fit(topics.text)
-
+topics
 # we can easily have done fit_transform, but lets explore what was learned about our corpus
 
 # get the vocabulary and their term:numeric id map
@@ -271,7 +273,7 @@ len(cv.vocabulary_)
 
 ## make this a numeric matrix of document by term (dtm)
 dtm = cv.transform(topics.text)
-
+dtm
 # confirm the shape is what we expect
 dtm.shape
 topics.shape
